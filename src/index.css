@@ -4,6 +4,10 @@ body {
   color: #3f4850;
 }
 
+li[role=button] {
+  cursor: pointer;
+}
+
 .forkongithub a {
   background: #000;
   color: #fff;
@@ -232,4 +236,76 @@ input {
     -o-transform: rotate(45deg);
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.8);
   }
+}
+
+
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1040;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000;
+  opacity: .5;
+}
+
+.modal-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1050;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  outline: 0;
+}
+
+.modal {
+  z-index: 100;
+  background: white;
+  position: relative;
+  margin: 1.75rem auto;
+  border-radius: 3px;
+  max-width: 500px;
+  padding: 2rem;
+  padding-top: 1rem;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.modal-close-button {
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1;
+  color: #000;
+  opacity: .3;
+  cursor: pointer;
+  border: none;
+}
+
+button {
+  font-size: .9rem;
+  font-weight: 700;
+  border: none;
+  background: transparent;
+  border-radius: 3px;
+  padding: .3rem 1rem;
+  margin-left: .5rem;
+}
+
+.button-default {
+  background: #247BA0;
+  color: #fff;
+}
+
+.modal-body {
+  min-height: 400px;
+  min-height: 400px;
+  position: relative;
 }
