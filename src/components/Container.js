@@ -1,18 +1,14 @@
-import React, { useContext, useEffect } from "react";
-import { PhotoContext } from "../context/PhotoContext";
+import React from "react";
+
 import Gallery from "./Gallery";
 import Loader from "./Loader";
+import useFetchOrMemo from "../hooks/useFetchOrMemo";
 
 const Container = ({ searchTerm }) => {
-  const { images, loading, runSearch } = useContext(PhotoContext);
-  useEffect(() => {
-    runSearch(searchTerm);
-    // eslint-disable-next-line
-  }, [searchTerm]);
-
+  const [ isLoading, data ] = useFetchOrMemo(searchTerm);
   return (
     <div className="photo-container">
-      {loading ? <Loader /> : <Gallery data={images} />}
+      {isLoading ? <Loader /> : <Gallery data={data} />}
     </div>
   );
 };
